@@ -1,0 +1,30 @@
+# Tianhao Peng
+
+Visit the [published homepage](https://tianhao-peng.github.io/). Open `index.html` in a browser to preview changes locally. The homepage works from this folder without a build step.
+
+- `index.html` contains the profile, research, news, publications, and contact details.
+- `styles.css` sets the layout and typography. The layout follows [Yilun Du’s academic homepage](https://yilundu.github.io/).
+- `site.js` assembles the email address after a visitor selects Email and filters Selected Work by topic. Selected Papers shows papers marked with `data-lead-author` for first or equal first authorship or `data-corresponding-author` for corresponding authorship. Papers with either attribute are also visible in the initial HTML. The corresponding author label beside Tianhao Peng’s name follows the paper’s byline. Each topic shows papers with Tianhao Peng first, followed by entries marked `data-group-publication`. Those entries list Wenjun Wu among their authors. Within each group, `data-venue-priority="a"` marks papers in A venues, followed by other published papers and `data-venue-priority="preprint"` for preprint-only entries. Venue priority follows the [2026 CCF catalog](https://www.ccf.org.cn/Academic_Evaluation/By_category/2026-03-31/870181.shtml). The Multi-Agent Systems filter also uses `data-subtopic` to show Embodied and Digital work. Keep paper IDs stable for links from the research and news sections.
+- `research.js` animates the model states and the four robot illustrations. Each diagram loops while in view and resumes where it paused when it comes back into view. The controls support manual pause and resume. With reduced motion enabled, the diagrams start as still images and play on request.
+
+Publication thumbnails use the authors’ figures. The GraphRARE thumbnail is [Figure 2 from the paper](https://arxiv.org/pdf/2312.09708v2#page=3). The MVU-Eval examples and the R²GCurL, TagRec, and SOLA-GCL diagrams come from the local research files. The other thumbnails are Figure 1 from [Pre-trained Molecular Language Models](https://arxiv.org/html/2411.01401), Figure 1 from [A Survey on Latent Reasoning](https://arxiv.org/html/2507.06203), Figure 2 from [Agent KB](https://arxiv.org/html/2507.06229), and Figure 1 from [CLGT](https://arxiv.org/html/2308.02038).
+
+The RGP thumbnail is Figure 2 from the [IJCAI-ECAI 2026 proceedings](https://ijcai.org/proceedings/2026/0564.pdf). The Multi-Agent Systems thumbnails are figures from the papers linked in each entry. The Research diagram connects intermediate reasoning states in foundation models to collective reasoning in embodied multi-agent systems.
+
+The additional paper thumbnails use figures from the papers linked in Selected Work. Figure 1 of Probe-and-Fetch was cropped from the CC BY 4.0 published version in [CityUHK Scholars](https://scholars.cityu.edu.hk/en/publications/probe-and-fetch-dynamic-kv-cache-pruning-for-accelerated-long-con/). The CLMER, CLDAE, and FetchEEG figures come from [co-author Yu Liang’s homepage](https://yuliang-homepage.github.io/).
+
+Selected Work uses Figure 3 from [S³PRank](https://ieeexplore.ieee.org/document/11208803/figures), Figure 1 from [RankElectra](https://doi.org/10.1145/3690624.3709395), Figure 2 from [ELAKT](https://doi.org/10.1145/3652601), Figure 3 from [Symmetry-Informed MARL](https://doi.org/10.1109/TMC.2025.3553285), and Figure 1 from [Integrating Cognition Cost With Reliability QoS for Dynamic Workflow Scheduling Using Reinforcement Learning](https://doi.org/10.1109/TSC.2023.3253182).
+
+The CoE-Ops thumbnail is Figure 4 from the [CC BY 4.0 preprint](https://arxiv.org/abs/2507.22937).
+
+The VoLN and AERIS thumbnails use Figure 1 from [VoLN](https://arxiv.org/html/2607.21400) and [AERIS](https://arxiv.org/html/2606.30151). The LLM-NAR thumbnail uses Figure 2 from the [LLM-NAR preprint](https://arxiv.org/html/2508.17971) via the local ADMIRE site.
+
+## Research Collaborations
+
+The world map uses city-level author and named contributor affiliations from the homepage, CV, and publication audit. The audit covers 38 distinct works, including 37 with at least one locatable affiliation. The affiliations for the SSRN record at 10.2139/ssrn.4237368 remain unverified because its signed manuscript was unavailable.
+
+`collaboration-data.js` records each city's coordinates, canonical institution names, and the papers used to verify those affiliations. It links to the paper sources. The map draws one point per city. Hover or tap a point to see the deduplicated institutions at that location. Labs identified as parts of a university use the university's name. Independently named research institutes retain their institutional identities.
+
+City information comes from the affiliation line or a verified institutional campus or office. Locations of campuses outside an institution's primary city use the relevant campus when identifiable. For example, the NJU-LINK affiliation is mapped to Nanjing University's [Suzhou campus](https://is.nju.edu.cn/is_en/9c/48/c57786a826440/page.htm), and Beihang's Hangzhou institute is placed at the city given in the [paper](https://arxiv.org/pdf/2603.21663). [StepFun's office](https://www.stepfun.com/about), [Meituan's principal office](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0424/2026042400179.pdf), [OPPO Research Institute](https://www.oppo.com/ae/newsroom/press/oppo-smartphone-pioneers-5g-internet-connection-first/), and [Microsoft Research Redmond](https://www.microsoft.com/en-us/research/people/chehao/) were checked using official sources. The map uses approximate city centers and includes affiliations with verifiable locations.
+
+The land outlines are adapted from [Natural Earth 1:110m land, v5.1.2](https://www.naturalearthdata.com/downloads/110m-physical-vectors/110m-land/) and stored in `collaboration-land.js`. `collaborations.js` uses local copies of D3 Array and D3 Geo to draw an equirectangular world map. The vendor licenses are in `vendor/`. The map works from the local HTML file.

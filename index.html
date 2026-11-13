@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tianhao Peng’s research on reasoning dynamics in foundation models and embodied multi-agent systems.">
+  <link rel="canonical" href="https://tianhao-peng.github.io/">
+  <title>Tianhao Peng</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+  <script src="research.js" defer></script>
+  <script src="vendor/d3-array.min.js" defer></script>
+  <script src="vendor/d3-geo.min.js" defer></script>
+  <script src="collaboration-land.js" defer></script>
+  <script src="collaboration-data.js" defer></script>
+  <script src="collaborations.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to main content</a>
+  <div class="page" id="top">
+    <header class="profile inset">
+      <div class="profile-photo">
+        <img src="images/tianhao-peng.jpg" alt="Tianhao Peng" width="425" height="510">
+      </div>
+      <div class="profile-copy">
+        <h1>Tianhao Peng</h1>
+        <p class="position">Research Fellow</p>
+        <p class="affiliation">Nanyang Technological University, Singapore</p>
+        <ul class="profile-links" id="contact">
+          <li><a href="https://scholar.google.com/citations?user=jykL70MAAAAJ">Google Scholar</a></li>
+          <li id="email" hidden><button class="profile-email" type="button" aria-label="Show email address">Email</button></li>
+        </ul>
+      </div>
+    </header>
+
+    <nav class="site-nav inset" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Selected Work</a></li>
+      </ul>
+    </nav>
+
+    <main class="inset">
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title" class="visually-hidden">About</h2>
+        <p>I am a Research Fellow in the College of Computing and Data Science (CCDS) at Nanyang Technological University, Singapore. My postdoctoral supervisor is Professor <a href="https://dr.ntu.edu.sg/entities/person/Tao-Dacheng">Dacheng Tao</a>. I received my bachelor’s degree in Computer Science and Technology in 2020 and my PhD in January 2026 from Beihang University, where Professor <a href="https://iai.buaa.edu.cn/info/1131/1972.htm">Wenjun Wu</a> was my doctoral advisor.</p>
+
+        <p>My current research focuses on <mark class="about-research-focus">reasoning dynamics in foundation models</mark> and <mark class="about-research-focus">embodied multi-agent systems</mark>. My earlier work includes graph data mining and intelligent education.</p>
+      </section>
+
+      <section class="section" id="research" aria-labelledby="research-title">
+        <h2 id="research-title">Research</h2>
+        <p class="research-intro">I study how reasoning changes as information becomes available, from intermediate states in foundation models to joint plans in robot teams.</p>
+
+        <figure class="research-figure" aria-labelledby="research-figure-caption">
+          <figcaption class="visually-hidden" id="research-figure-caption">Reasoning Dynamics provides the theoretical foundation for studying collective reasoning in embodied multi-agent systems.</figcaption>
+
+          <section class="research-direction research-foundation" id="research-reasoning" aria-labelledby="research-reasoning-title">
+            <div class="research-direction-copy">
+              <p class="research-level">Theoretical foundation</p>
+              <h3 id="research-reasoning-title">Reasoning Dynamics</h3>
+              <p>Denoising in a diffusion language model gives me a sequence of intermediate states to examine. I want to understand when the model has enough information to answer, where errors arise, and when another step can help.</p>
+            </div>
+            <figure class="research-direction-figure" data-animation="reasoning">
+              <div class="research-animation">
+                <img src="images/research-reasoning.png" width="1260" height="360" alt="A prompt passes through three denoising steps. The changing dot patterns illustrate how the model’s intermediate states evolve before it produces an answer.">
+                <canvas width="1260" height="360" aria-hidden="true" hidden></canvas>
+              </div>
+              <div class="research-animation-controls" hidden>
+                <button type="button" class="research-playback" aria-label="Play animation for reasoning dynamics">Play animation</button>
+              </div>
+            </figure>
+          </section>
+
+          <div class="research-connection" aria-hidden="true"></div>
+
+          <section class="research-direction research-embodied" id="research-embodied" aria-labelledby="research-embodied-title">
+            <div class="research-direction-copy">
+              <h3 id="research-embodied-title">Embodied Multi-Agent Systems</h3>
+              <p>I study collective reasoning in teams of heterogeneous robots, such as a wheeled unmanned ground vehicle, a quadruped, a drone, and a robotic arm. I ask how they should share observations, divide the work, and revise their joint plan.</p>
+            </div>
+            <figure class="research-direction-figure" data-animation="coordination">
+              <p class="research-plan-label">Joint plan</p>
+              <div class="research-animation">
+                <img src="images/research-physical-agents.png" width="1600" height="440" alt="A wheeled unmanned ground vehicle, a quadruped, a drone, and a robotic arm share local observations and receive assignments from their joint plan.">
+                <canvas width="1600" height="440" aria-hidden="true" hidden></canvas>
+              </div>
+              <figcaption>
+                <div class="research-diagram-labels"><span>Wheeled UGV</span><span>Quadruped</span><span>Drone</span><span>Robotic arm</span></div>
+                <div class="research-animation-controls" hidden>
+                  <button type="button" class="research-playback" aria-label="Play animation for robot coordination">Play animation</button>
+                </div>
+              </figcaption>
+            </figure>
+          </section>
+        </figure>
+      </section>
+
+      <section class="section" id="news" aria-labelledby="news-title">
+        <h2 id="news-title">News &amp; updates</h2>
+        <ul class="news-list">
+          <li><time datetime="2026-10">[Oct 2026]</time> <a href="https://aclanthology.org/2026.emnlp-main.1169/">MM-BrowseComp</a> appeared in the main proceedings of EMNLP 2026.</li>
+          <li><time datetime="2026-10">[Oct 2026]</time> <a href="https://aclanthology.org/2026.findings-emnlp.1566/">Skill-Guided Continuation Distillation for GUI Agents</a> appeared in Findings of EMNLP 2026.</li>
+          <li><time datetime="2026-10-18">[Oct 2026]</time> <a href="https://arxiv.org/abs/2610.26959">Dynamic System Inspired Continuous LLM</a> was posted on arXiv (ADMIRE group publication).</li>
+          <li><time datetime="2026-10-14">[Oct 2026]</time> <a href="https://arxiv.org/abs/2610.19380">Learning What to Keep</a> was posted on arXiv.</li>
+          <li><time datetime="2026-09-26">[Sep 2026]</time> <a href="https://arxiv.org/abs/2609.32862">RoboFoundry</a> was posted on arXiv (ADMIRE group publication).</li>
+        </ul>
+        <details class="news-archive">
+          <summary><span class="news-more">Show more</span><span class="news-less">Show less</span></summary>
+          <ul class="news-list">
+            <li><time datetime="2026-09-16">[Sep 2026]</time> <a href="https://arxiv.org/abs/2609.18520">AeroWeaver</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2026-09-07">[Sep 2026]</time> <a href="https://arxiv.org/abs/2609.07051">TrojanWorld</a> was posted on arXiv.</li>
+            <li><time datetime="2026-08-03">[Aug 2026]</time> <a href="https://arxiv.org/abs/2608.01743">Toward Plasticity-Preserving KL Regularization</a> was posted on arXiv.</li>
+            <li><time datetime="2026-07-23">[Jul 2026]</time> <a href="https://arxiv.org/abs/2607.21400">VoLN</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2026-06-29">[Jun 2026]</time> <a href="https://arxiv.org/abs/2606.30151">AERIS</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2026-06-23">[Jun 2026]</time> <a href="https://arxiv.org/abs/2606.25119">SurveilNav</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2026-06-17">[Jun 2026]</time> <a href="https://arxiv.org/abs/2606.18890">Skill-Guided Continuation Distillation for GUI Agents</a> was posted on arXiv.</li>
+            <li><time datetime="2026-05-26">[May 2026]</time> <a href="https://arxiv.org/abs/2605.26924">Learning to Adapt SFT Data for Better Reasoning Generalization</a> was posted on arXiv.</li>
+            <li><time datetime="2026-05-25">[May 2026]</time> <a href="https://arxiv.org/abs/2605.25864">When Self-Belief Misleads</a> was posted on arXiv.</li>
+            <li><time datetime="2026-05-22">[May 2026]</time> <a href="https://doi.org/10.1145/3818614">R²GCurL</a> was accepted by ACM Transactions on Information Systems (TOIS).</li>
+            <li><time datetime="2026-05-15">[May 2026]</time> <a href="https://arxiv.org/abs/2605.15611">TopoEvo</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2026-05-15">[May 2026]</time> <a href="https://arxiv.org/abs/2605.15581">STAR</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2026-04">[Apr 2026]</time> <a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/df5e4da78dfbbfbfad3fcff0c2ce3bd7-Abstract-Conference.html">OmniVideoBench</a> appeared in the main proceedings of ICLR 2026.</li>
+            <li><time datetime="2026-04-12">[Apr 2026]</time> <a href="https://doi.org/10.1145/3774904.3792794">Probe-and-Fetch</a> was published in the main proceedings of The ACM Web Conference 2026 (WWW).</li>
+            <li><time datetime="2026-03-23">[Mar 2026]</time> <a href="https://arxiv.org/abs/2603.21663">TAMTRL</a> was posted on arXiv.</li>
+            <li><time datetime="2026-01-21">[Jan 2026]</time> <a href="https://arxiv.org/abs/2601.14681">FARE</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2026-01">[Jan 2026]</time> <a href="https://doi.org/10.1109/TKDE.2025.3623607">S³PRank</a> appeared in IEEE Transactions on Knowledge and Data Engineering (TKDE), Volume 38, Issue 1.</li>
+            <li><time datetime="2025-12">[Dec 2025]</time> <a href="#mvu-eval">MVU-Eval</a> appeared in the NeurIPS Datasets and Benchmarks track.</li>
+            <li><time datetime="2025-12-18">[Dec 2025]</time> <a href="https://arxiv.org/abs/2512.16969">Probing Scientific General Intelligence of LLMs</a> was posted on arXiv.</li>
+            <li><time datetime="2025-12-10">[Dec 2025]</time> <a href="https://arxiv.org/abs/2512.09607">UrbanNav</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2025-11">[Nov 2025]</time> <a href="https://aclanthology.org/2025.findings-emnlp.720/">OAgents</a> appeared in Findings of EMNLP.</li>
+            <li><time datetime="2025-11-23">[Nov 2025]</time> <a href="https://arxiv.org/abs/2511.18538">From Code Foundation Models to Agents and Applications</a> was posted on arXiv.</li>
+            <li><time datetime="2025-11-10">[Nov 2025]</time> <a href="https://arxiv.org/abs/2511.07250">MVU-Eval</a> was posted on arXiv.</li>
+            <li><time datetime="2025-10-23">[Oct 2025]</time> <a href="https://arxiv.org/abs/2510.20685">C-NAV</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2025-10-20">[Oct 2025]</time> <a href="https://arxiv.org/abs/2510.17722">MT-Video-Bench</a> was posted on arXiv.</li>
+            <li><time datetime="2025-10-12">[Oct 2025]</time> <a href="https://arxiv.org/abs/2510.10689">OmniVideoBench</a> was posted on arXiv.</li>
+            <li><time datetime="2025-09-28">[Sep 2025]</time> <a href="https://arxiv.org/abs/2509.23967">HiPO</a> was posted on arXiv.</li>
+            <li><time datetime="2025-08-25">[Aug 2025]</time> <a href="https://arxiv.org/abs/2508.17971">LLM-NAR</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2025-08-14">[Aug 2025]</time> <a href="https://arxiv.org/abs/2508.13186">MM-BrowseComp</a> was posted on arXiv.</li>
+            <li><time datetime="2025-08-07">[Aug 2025]</time> <a href="https://arxiv.org/abs/2508.10019">DURIT</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2025-07-25">[Jul 2025]</time> <a href="https://arxiv.org/abs/2507.19427">Step-3 technical report</a> was posted on arXiv.</li>
+            <li><time datetime="2025-07-25">[Jul 2025]</time> <a href="https://arxiv.org/abs/2507.22937">CoE-Ops</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2025-07-19">[Jul 2025]</time> <a href="https://arxiv.org/abs/2507.14698">Spatial-Temporal Transformer for EEG-Based Emotion Recognition</a> was posted on arXiv.</li>
+            <li><time datetime="2025-07-08">[Jul 2025]</time> <a href="https://arxiv.org/abs/2507.06203">A Survey on Latent Reasoning</a> was posted on arXiv.</li>
+            <li><time datetime="2025-07-08">[Jul 2025]</time> <a href="https://arxiv.org/abs/2507.06229">Agent KB</a> was posted on arXiv.</li>
+            <li><time datetime="2025-06-17">[Jun 2025]</time> <a href="https://arxiv.org/abs/2506.15741">OAgents</a> was posted on arXiv.</li>
+            <li><time datetime="2025-06-07">[Jun 2025]</time> <a href="https://arxiv.org/abs/2506.06683">RoboPARA</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2025-05-19">[May 2025]</time> <a href="https://arxiv.org/abs/2505.12884">TinyAlign</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2025-03-13">[Mar 2025]</time> <a href="https://arxiv.org/abs/2503.10100">SOLA-GCL</a> was posted on arXiv.</li>
+            <li><time datetime="2025-02-01">[Feb 2025]</time> <a href="https://arxiv.org/abs/2502.00547">Milmer</a> was posted on arXiv.</li>
+            <li><time datetime="2024-11-03">[Nov 2024]</time> <a href="https://arxiv.org/abs/2411.01401">Pre-trained Molecular Language Models with Random Functional Group Masking</a> was posted on arXiv.</li>
+            <li><time datetime="2024-07-11">[Jul 2024]</time> <a href="https://arxiv.org/abs/2407.08164">HC-MARL</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2023-12-30">[Dec 2023]</time> <a href="https://arxiv.org/abs/2401.00167">Leveraging Partial Symmetry for Multi-Agent Reinforcement Learning</a> was posted on arXiv (ADMIRE group publication).</li>
+            <li><time datetime="2023-12-15">[Dec 2023]</time> <a href="https://arxiv.org/abs/2312.09708">GraphRARE</a> was posted on arXiv.</li>
+            <li><time datetime="2023-07-30">[Jul 2023]</time> <a href="https://arxiv.org/abs/2308.02038">CLGT</a> was posted on arXiv.</li>
+          </ul>
+        </details>
+      </section>
+
+      <section class="section" id="publications" aria-labelledby="publications-title">
+        <h2 id="publications-title">Selected Work</h2>
+        <div class="publication-controls" hidden>
+          <div class="filters" role="group" aria-label="Filter selected work by topic">
+            <button type="button" data-filter="all" aria-pressed="true">Selected Papers</button>
+            <button type="button" data-filter="reasoning" aria-pressed="false">Reasoning Dynamics</button>
+            <button type="button" data-filter="agents" aria-pressed="false">Multi-Agent Systems</button>
+            <button type="button" data-filter="education" aria-pressed="false">Intelligent Education</button>
+          </div>
+          <div class="filters agent-filters" role="group" aria-label="Filter multi-agent systems by type" hidden>
+            <button type="button" data-agent-filter="all" aria-pressed="true">All types</button>
+            <button type="button" data-agent-filter="embodied" aria-pressed="false">Embodied</button>
+            <button type="button" data-agent-filter="digital" aria-pressed="false">Digital</button>
+          </div>
+          <p class="result-count" role="status"></p>
+        </div>
+
+        <ul class="paper-list">
+          <li class="paper-group" id="author-publications" hidden><h3>Tianhao Peng’s Publications</h3></li>
+          <li class="paper-group" id="admire-publications" hidden><h3>ADMIRE Group Publications</h3></li>
+          <li class="paper" id="r2gcurl" data-topic="education" data-lead-author data-venue-priority="a">
+            <div class="paper-image"><img src="images/r2gcurl.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1145/3818614">R²GCurL: Reinforced Robust Knowledge Tracing via Dynamic Graph Curriculum Learning</a></h3>
+              <p class="authors"><strong>Tianhao Peng</strong>, Yanjun Pu, Yongqi Zhang, Yuchen Li, Jian Ren, Jie Luo, Kui Zhang, Haitao Yuan, Shuaiqiang Wang, Dawei Yin, Wenjun Wu</p>
+              <p class="paper-topic">2026 · Intelligent Education</p>
+              <p class="paper-links"><strong>ACM TOIS 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="mvu-eval" data-topic="reasoning" data-lead-author data-venue-priority="a">
+            <div class="paper-image"><img src="images/mvu-eval.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/4dbb159f2c68b359b3b6ed7dd039481c-Abstract-Datasets_and_Benchmarks_Track.html">MVU-Eval: Towards Multi-Video Understanding Evaluation for Multimodal LLMs</a></h3>
+              <p class="authors"><strong>Tianhao Peng</strong>*, Haochen Wang*, Yuanxing Zhang*, et al.</p>
+              <p class="paper-topic">2025 · Reasoning Dynamics</p>
+              <p class="paper-links"><strong>NeurIPS 2025 · Datasets &amp; Benchmarks</strong><a href="https://arxiv.org/abs/2511.07250">arXiv</a><a href="https://github.com/NJU-LINK/MVU-Eval">Code &amp; data</a></p>
+            </article>
+          </li>
+          <li class="paper" id="tagrec" data-topic="education" data-lead-author data-venue-priority="a">
+            <div class="paper-image"><img src="images/tagrec.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/TKDE.2025.3538706">TagRec: Temporal-Aware Graph Contrastive Learning With Theoretical Augmentation for Sequential Recommendation</a></h3>
+              <p class="authors"><strong>Tianhao Peng</strong>, Haitao Yuan, Yongqi Zhang, Yuchen Li, Peihong Dai, Qunbo Wang, Senzhang Wang, Wenjun Wu</p>
+              <p class="paper-topic">2025 · Intelligent Education</p>
+              <p class="paper-links"><strong>IEEE TKDE 2025</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="sola-gcl" data-topic="education" data-lead-author data-venue-priority="a">
+            <div class="paper-image"><img src="images/sola-gcl.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://ojs.aaai.org/index.php/AAAI/article/view/34189">SOLA-GCL: Subgraph-Oriented Learnable Augmentation Method for Graph Contrastive Learning</a></h3>
+              <p class="authors"><strong>Tianhao Peng</strong>, Xuhong Li, Haitao Yuan, Yuchen Li, Haoyi Xiong</p>
+              <p class="paper-topic">2025 · Intelligent Education</p>
+              <p class="paper-links"><strong>AAAI 2025</strong><a href="https://arxiv.org/abs/2503.10100">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="graphrare" data-topic="education" data-lead-author data-venue-priority="a">
+            <div class="paper-image"><img src="images/graphrare.png" alt="GraphRARE framework showing relative entropy calculation and joint training of the GNN and reinforcement learning modules" width="1551" height="305" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/ICDE60146.2024.00196">GraphRARE: Reinforcement Learning Enhanced Graph Neural Network with Relative Entropy</a></h3>
+              <p class="authors"><strong>Tianhao Peng</strong>, Wenjun Wu, Haitao Yuan, et al.</p>
+              <p class="paper-topic">2024 · Intelligent Education</p>
+              <p class="paper-links"><strong>IEEE ICDE 2024</strong><a href="https://arxiv.org/abs/2312.09708">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="clgt" data-topic="education" data-lead-author data-venue-priority="a">
+            <div class="paper-image"><img src="images/clgt.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://ojs.aaai.org/index.php/AAAI/article/view/26893">CLGT: A Graph Transformer for Student Performance Prediction in Collaborative Learning</a></h3>
+              <p class="authors"><strong>Tianhao Peng</strong>, Yu Liang, Wenjun Wu, Jian Ren, Zhao Pengrui, Yanjun Pu</p>
+              <p class="paper-topic">2023 · Intelligent Education</p>
+              <p class="paper-links"><strong>AAAI 2023</strong><a href="https://arxiv.org/abs/2308.02038">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="omnivideobench" data-topic="reasoning" data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/omnivideobench.webp" alt="OmniVideoBench examples with video frames, audio cues, and reasoning traces" width="826" height="696" loading="lazy"></div>
+            <article>
+              <h3><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/df5e4da78dfbbfbfad3fcff0c2ce3bd7-Abstract-Conference.html">OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs</a></h3>
+              <p class="authors">Caorui Li, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>ICLR 2026</strong><a href="https://arxiv.org/abs/2510.10689">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="probe-and-fetch" data-topic="reasoning" data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/probe-and-fetch.webp" alt="Probe-and-Fetch framework for KV cache pruning and asynchronous fetching" width="1065" height="471" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1145/3774904.3792794">Probe-and-Fetch: Dynamic KV Cache Pruning for Accelerated Long-Context Inference in Web-Scale AI Search</a></h3>
+              <p class="authors">Yuchen Li, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>WWW 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="gcn-sr" data-topic="reasoning" data-group-publication data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/gcn-sr.webp" alt="GCN-SR framework for expression sampling, constraint-aware decoding, and reward shaping" width="893" height="385" loading="lazy"></div>
+            <article>
+              <h3><a href="https://proceedings.mlr.press/v306/wu26bj.html">Neural–Evolutionary Symbolic Regression with Global Constraints: Constraint-Aware Decoding and Reward Shaping</a></h3>
+              <p class="authors">Xiangdong Wu, Wenjun Wu, Ziyu Wei, Bingrun Chen, Zhenbo Song, Rongye Shi</p>
+              <p class="paper-links"><strong>ICML 2026</strong> · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="durit" data-topic="reasoning" data-group-publication data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/durit.webp" alt="DURIT framework for problem-space mapping and reasoning" width="1015" height="360" loading="lazy"></div>
+            <article>
+              <h3><a href="https://ojs.aaai.org/index.php/AAAI/article/view/40646">Decoupling Understanding from Reasoning via Problem Space Mapping for Small-Scale Model Reasoning</a></h3>
+              <p class="authors">Li Wang, Changhao Zhang, Zengqi Xiu, Kai Lu, Xin Yu, Kui Zhang, Wenjun Wu</p>
+              <p class="paper-links"><strong>AAAI 2026</strong> · ADMIRE group publication<a href="https://arxiv.org/abs/2508.10019">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="soft-knowledge-prompt" data-topic="reasoning" data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/soft-knowledge-prompt.webp" alt="Soft Knowledge Prompt framework for selecting and fusing external knowledge in visual question answering" width="965" height="415" loading="lazy"></div>
+            <article>
+              <h3><a href="https://aclanthology.org/2024.acl-long.332/">Soft Knowledge Prompt: Help External Knowledge Become a Better Teacher to Instruct LLM in Knowledge-based VQA</a></h3>
+              <p class="authors">Qunbo Wang, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>ACL 2024</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="s3prank" data-topic="education" data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/s3prank.webp" alt="S³PRank framework for satisfaction-oriented ranker fine-tuning" width="752" height="820" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/TKDE.2025.3623607">S³PRank: Toward Satisfaction-Oriented Learning to Rank With Semi-Supervised Pre-Training</a></h3>
+              <p class="authors">Yuchen Li, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>IEEE TKDE 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="rankelectra" data-topic="education" data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/rankelectra.webp" alt="RankElectra framework for graph extension, Electra pre-training, and ranking fine-tuning" width="1120" height="359" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1145/3690624.3709395">RankElectra: Semi-supervised Pre-training of Learning-to-Rank Electra for Web-scale Search</a></h3>
+              <p class="authors">Yuchen Li, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>ACM KDD 2025</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="elakt" data-topic="education" data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/elakt.webp" alt="ELAKT architecture for embedding aggregation, knowledge state smoothing, and prediction correction" width="861" height="555" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1145/3652601">ELAKT: Enhancing Locality for Attentive Knowledge Tracing</a></h3>
+              <p class="authors">Yanjun Pu, Fang Liu, Rongye Shi, Haitao Yuan, Ruibo Chen, <strong>Tianhao Peng</strong>, Wenjun Wu</p>
+              <p class="paper-links"><strong>ACM TOIS 2024</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="delo" data-topic="education" data-group-publication data-venue-priority="a" hidden>
+            <div class="paper-image"><img src="images/delo.webp" alt="Neural network architecture for ranking candidate answers" width="535" height="299" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/tkde.2021.3056894">Deep Bayesian Active Learning for Learning to Rank: A Case Study in Answer Selection</a></h3>
+              <p class="authors">Qunbo Wang, Wenjun Wu, Yuxing Qi, Yongchi Zhao</p>
+              <p class="paper-links"><strong>IEEE TKDE 2022</strong> · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="rgp-ijcai" data-topic="reasoning" data-group-publication hidden>
+            <div class="paper-image"><img src="images/rgp.png" alt="RGP framework for reusing subexpressions in symbolic regression" loading="lazy"></div>
+            <article>
+              <h3><a href="https://www.ijcai.org/proceedings/2026/564">Progressive Subexpression Reuse in Symbolic Regression: Insights from RL-based Search and a Genetic Programming Realization</a></h3>
+              <p class="authors">Xiangdong Wu, Wenjun Wu, Bingrun Chen, Junle Wang, Zhaoxin Fan, Haoyi Zhou, Pengju Zhang, Rongye Shi</p>
+              <p class="paper-links"><strong>IJCAI-ECAI 2026</strong> · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="mlm-fg" data-topic="reasoning" data-lead-author>
+            <div class="paper-image"><img src="images/mlm-fg.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://www.nature.com/articles/s44387-025-00029-3">Pre-trained molecular language models with random functional group masking</a></h3>
+              <p class="authors"><strong>Tianhao Peng</strong>*, Yuchen Li, Xuhong Li, Jiang Bian, Zeke Xie, Ning Sui, Shahid Mumtaz, Yanwu Xu, Linghe Kong, Haoyi Xiong*</p>
+              <p class="paper-topic">2025 · Reasoning Dynamics</p>
+              <p class="paper-links"><a href="https://arxiv.org/abs/2411.01401">arXiv</a><a href="https://www.nature.com/articles/s44387-025-00029-3">Journal version</a></p>
+            </article>
+          </li>
+          <li class="paper" id="tamtrl" data-topic="reasoning" data-corresponding-author>
+            <div class="paper-image"><img src="images/tamtrl.webp" alt="TAMTRL framework for teacher-aligned reward shaping across reasoning turns" width="831" height="383" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1016/j.neunet.2026.109492">TAMTRL: Teacher-Aligned Reward Reshaping for Multi-Turn Reinforcement Learning in Long-Context Compression</a></h3>
+              <p class="authors">Li Wang, …, <strong>Tianhao Peng</strong> <span class="corresponding-author">(corresponding author)</span>, et al.</p>
+              <p class="paper-links"><strong>Neural Networks · January 2027 issue</strong><a href="https://arxiv.org/abs/2603.21663">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="latent-reasoning" data-topic="reasoning" data-lead-author data-venue-priority="preprint">
+            <div class="paper-image"><img src="images/latent-reasoning.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2507.06203">A Survey on Latent Reasoning</a></h3>
+              <p class="authors">Rui-Jie Zhu*, <strong>Tianhao Peng</strong>*, Tianhao Cheng*, Xingwei Qu*, et al.</p>
+              <p class="paper-topic">2025 · Reasoning Dynamics</p>
+              <p class="paper-links"><strong>arXiv preprint</strong><a href="https://github.com/multimodal-art-projection/LatentCoT-Horizon">Reading list</a></p>
+            </article>
+          </li>
+          <li class="paper" id="mt-video-bench" data-topic="reasoning" hidden>
+            <div class="paper-image"><img src="images/mt-video-bench.webp" alt="MT-Video-Bench single-scene and cross-scene dialogue examples" width="956" height="528" loading="lazy"></div>
+            <article>
+              <h3><a href="https://aclanthology.org/2026.findings-acl.397/">MT-Video-Bench: A Holistic Video Understanding Benchmark for Evaluating Multimodal LLMs in Multi-Turn Dialogues</a></h3>
+              <p class="authors">Yaning Pan, …, <strong>Tianhao Peng</strong>, Jiaheng Liu</p>
+              <p class="paper-links"><strong>Findings of ACL 2026</strong><a href="https://arxiv.org/abs/2510.17722">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="tinyalign" data-topic="reasoning" data-group-publication hidden>
+            <div class="paper-image"><img src="images/tinyalign.webp" alt="TinyAlign architecture with visual token retrieval, projection, and multi-layer fusion" width="811" height="511" loading="lazy"></div>
+            <article>
+              <h3><a href="https://aclanthology.org/2026.findings-acl.223/">TinyAlign: Boosting Lightweight Vision-Language Models by Mitigating Modal Alignment Bottlenecks</a></h3>
+              <p class="authors">Yuanze Hu, Xinyu Wang, Zhichao Yang, Gen Li, Ye Qiu, Zhaoxin Fan, Wenjun Wu, Yifan Sun, Jin Dong, Xiaotie Deng</p>
+              <p class="paper-links"><strong>Findings of ACL 2026</strong> · ADMIRE group publication<a href="https://arxiv.org/abs/2505.12884">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="continuous-llm" data-topic="reasoning" data-group-publication data-venue-priority="preprint" hidden>
+            <div class="paper-image"><img src="images/continuous-llm.webp" alt="Continuum-LM conversion from discrete residual layers to continuous hidden-state transitions" width="785" height="724" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2610.26959">Dynamic System Inspired Continuous Large Language Model for AI4Science Tasks</a></h3>
+              <p class="authors">Zhaoxin Fan, Zheng Zhu, Yuqing Ma, Faguo Wu, Jian Yang, Wenjun Wu</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="plasticity-preserving-kl" data-topic="reasoning" data-venue-priority="preprint" data-corresponding-author>
+            <div class="paper-image"><img src="images/plasticity-preserving-kl.webp" alt="Comparison of KL constraints on correctness and conditional response distributions" width="507" height="194" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2608.01743">Toward Plasticity-Preserving KL Regularization for Capability Retention in LLM Reinforcement Learning</a></h3>
+              <p class="authors">Li Wang, …, <strong>Tianhao Peng</strong> <span class="corresponding-author">(corresponding author)</span>, et al.</p>
+              <p class="paper-links"><strong>arXiv 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="learning-to-adapt-sft" data-topic="reasoning" data-venue-priority="preprint" data-corresponding-author>
+            <div class="paper-image"><img src="images/learning-to-adapt-sft.webp" alt="DART data adaptation framework for reasoning fine-tuning" width="969" height="526" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2605.26924">Learning to Adapt SFT Data for Better Reasoning Generalization</a></h3>
+              <p class="authors">Lisong Sun, …, <strong>Tianhao Peng</strong> <span class="corresponding-author">(corresponding author)</span>, et al.</p>
+              <p class="paper-links"><strong>arXiv 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="self-belief" data-topic="reasoning" data-venue-priority="preprint" data-corresponding-author>
+            <div class="paper-image"><img src="images/self-belief.webp" alt="CARE framework for selecting informative reasoning samples to label" width="841" height="364" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2605.25864">When Self-Belief Misleads: Active Label Acquisition for Reinforcement Learning with Verifiable Rewards</a></h3>
+              <p class="authors">Li Wang, …, <strong>Tianhao Peng</strong> <span class="corresponding-author">(corresponding author)</span>, et al.</p>
+              <p class="paper-links"><strong>arXiv 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="scientific-general-intelligence" data-topic="reasoning" data-venue-priority="preprint" hidden>
+            <div class="paper-image"><img src="images/scientific-general-intelligence.webp" alt="Scientific general intelligence framework spanning deliberation, conception, action, and perception" width="965" height="482" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2512.16969">Probing Scientific General Intelligence of LLMs with Scientist-Aligned Workflows</a></h3>
+              <p class="authors">Wanghan Xu, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>arXiv 2025</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="hipo" data-topic="reasoning" data-venue-priority="preprint" hidden>
+            <div class="paper-image"><img src="images/hipo.webp" alt="HiPO hybrid data construction pipeline for dynamic reasoning" width="956" height="376" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2509.23967">HiPO: Hybrid Policy Optimization for Dynamic Reasoning in LLMs</a></h3>
+              <p class="authors">Ken Deng, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>arXiv 2025</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="step-3" data-topic="reasoning" data-venue-priority="preprint" hidden>
+            <div class="paper-image"><img src="images/step-3.webp" alt="Step-3 comparison of activated parameters and decoding cost" width="518" height="337" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2507.19427">Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding</a></h3>
+              <p class="authors">StepFun team, including <strong>Tianhao Peng</strong></p>
+              <p class="paper-links"><strong>arXiv 2025</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="robopara" data-topic="agents" data-group-publication data-venue-priority="a" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/robopara.webp" alt="RoboPARA framework for constructing task dependency graphs and planning parallel dual-arm execution" width="847" height="635" loading="lazy"></div>
+            <article>
+              <h3><a href="https://proceedings.iclr.cc/paper/2026/hash/e8aa3f5e8b5f24b830f31fd828e2a2a3-Abstract-Conference.html">RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks</a></h3>
+              <p class="authors">Shiying Duan, Pei Ren, Nanxiang Jiang, Zhengping Che, Jian Tang, Zhaoxin Fan, Yifan Sun, Wenjun Wu</p>
+              <p class="paper-links"><strong>ICLR 2026</strong> · Embodied · ADMIRE group publication<a href="https://arxiv.org/abs/2506.06683">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="urban-nav" data-topic="agents" data-group-publication data-venue-priority="a" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/urban-nav.png" alt="UrbanNav examples of language instructions and urban navigation trajectories" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1609/aaai.v40i22.38916">UrbanNav: Learning Language-Guided Embodied Urban Navigation from Web-Scale Human Trajectories</a></h3>
+              <p class="authors">Yanghong Mei, Yirong Yang, Longteng Guo, Qunbo Wang, Ming-Ming Yu, Xingjian He, Wenjun Wu, Jing Liu</p>
+              <p class="paper-links"><strong>AAAI 2026</strong> · Embodied · ADMIRE group publication<a href="https://arxiv.org/abs/2512.09607">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="tas-daq" data-topic="agents" data-group-publication data-venue-priority="a" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/tas-daq.png" alt="TAS-DAQ overview showing multi-view images, query aggregation, and 3D detection" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/TMM.2026.3664913">TAS-DAQ: Task-Adaptive Sparse Prediction With Dense Query Auxiliary Supervisory for Efficient 3D Object Detection</a></h3>
+              <p class="authors">Yirong Yang, Li Song, Qunbo Wang, Longteng Guo, Ruyi Ji, Ming-Ming Yu, Wenjun Wu, Jing Liu</p>
+              <p class="paper-links"><strong>IEEE TMM 2026</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="c-nav" data-topic="agents" data-group-publication data-venue-priority="a" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/c-nav.png" alt="C-NAV framework for continual object navigation" loading="lazy"></div>
+            <article>
+              <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/b78fef5ae6944767b9c1a5a2ae392cde-Abstract-Conference.html">C-NAV: Towards Self-Evolving Continual Object Navigation in Open World</a></h3>
+              <p class="authors">MingMing Yu, Fei Zhu, Wenzhuo Liu, Yirong Yang, Qunbo Wang, Wenjun Wu, Jing Liu</p>
+              <p class="paper-links"><strong>NeurIPS 2025</strong> · Embodied · ADMIRE group publication<a href="https://arxiv.org/abs/2510.20685">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="symmetry-informed-marl" data-topic="agents" data-group-publication data-venue-priority="a" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/symmetry-informed-marl.webp" alt="SiGNN architecture for symmetry-informed UAV swarm communication coverage" width="1134" height="286" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/TMC.2025.3553285">Symmetry-Informed MARL: A Decentralized and Cooperative UAV Swarm Control Approach for Communication Coverage</a></h3>
+              <p class="authors">Rongye Shi, Xin Yu, Yandong Wang, Yongkai Tian, Zhenyu Liu, Wenjun Wu, Xiao-Ping Zhang, Manuela M. Veloso</p>
+              <p class="paper-links"><strong>IEEE TMC 2025</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="partial-symmetry" data-topic="agents" data-group-publication data-venue-priority="a" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/partial-symmetry.png" alt="Partial symmetry framework for multi-agent reinforcement learning" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1609/aaai.v38i16.29709">Leveraging Partial Symmetry for Multi-Agent Reinforcement Learning</a></h3>
+              <p class="authors">Xin Yu, Rongye Shi, Pu Feng, Yongkai Tian, Simin Li, Shuhao Liao, Wenjun Wu</p>
+              <p class="paper-links"><strong>AAAI 2024</strong> · Embodied · ADMIRE group publication<a href="https://arxiv.org/abs/2401.00167">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="memocc" data-topic="agents" data-group-publication data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/memocc.webp" alt="MemOcc occupancy mapping framework with short-term and long-term memory" width="1001" height="408" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/icra57385.2026.11696303">MemOcc: Hierarchical Memory for Indoor Continuous Occupancy Mapping</a></h3>
+              <p class="authors">Yirong Yang, Yuxin Lin, Longteng Guo, Li Song, Qunbo Wang, Ming-Ming Yu, Wenjun Wu, Jing Liu</p>
+              <p class="paper-links"><strong>IEEE ICRA 2026</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="surveilnav" data-topic="agents" data-group-publication data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/surveilnav.webp" alt="SurveilNav pipeline for camera selection, joint mapping, and robot navigation" width="1072" height="438" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/icra57385.2026.11697410">SurveilNav: Collaborative Object Goal Navigation with Robot and Surveillance System</a></h3>
+              <p class="authors">Ming-Ming Yu, Qunbo Wang, Rongtao Xu, Yanghong Mei, Yirong Yang, Longteng Guo, Wenjun Wu, Jing Liu</p>
+              <p class="paper-links"><strong>IEEE ICRA 2026</strong> · Embodied · ADMIRE group publication<a href="https://arxiv.org/abs/2606.25119">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="agents-trainer" data-topic="agents" data-group-publication data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/agents-trainer.webp" alt="Agents Trainer framework for task, scenario, reward, training, and evaluation agents" width="969" height="526" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/tase.2026.3689345">Agents Trainer: Automatically Training Multi-Agent Reinforcement Learning Models for Drone Swarm Using Language Model-Based Agents</a></h3>
+              <p class="authors">Jiabin Lou, Rongye Shi, Haopeng Wang, Ming-Ming Yu, Yuanshuai Wang, Qunbo Wang, Wenjun Wu</p>
+              <p class="paper-links"><strong>IEEE T-ASE 2026</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="clga" data-topic="agents" data-group-publication data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/clga.webp" alt="CLGA framework with slow and fast modules for dynamic robot goal assignment" width="1061" height="482" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/iros60139.2025.11246692">CLGA: A Collaborative LLM Framework for Dynamic Goal Assignment in Multi-Robot Systems</a></h3>
+              <p class="authors">Xin Yu, Haoyuan Li, Yandong Wang, Simin Li, Rongye Shi, Gangzheng Ai, Zhiqiang Pu, Wenjun Wu</p>
+              <p class="paper-links"><strong>IEEE/RSJ IROS 2025</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="adaptaug" data-topic="agents" data-group-publication data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/adaptaug.webp" alt="AdaptAUG framework for selecting and applying multi-agent data augmentation" width="1100" height="442" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/icra57147.2024.10611035">AdaptAUG: Adaptive Data Augmentation Framework for Multi-Agent Reinforcement Learning</a></h3>
+              <p class="authors">Xin Yu, Yongkai Tian, Li Wang, Pu Feng, Wenjun Wu, Rongye Shi</p>
+              <p class="paper-links"><strong>IEEE ICRA 2024</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="hc-marl" data-topic="agents" data-group-publication data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/hc-marl.webp" alt="HC-MARL framework for building hierarchical consensus from local observations" width="650" height="290" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/iros58592.2024.10802212">Hierarchical Consensus-Based Multi-Agent Reinforcement Learning for Multi-Robot Cooperation Tasks</a></h3>
+              <p class="authors">Pu Feng, Junkang Liang, Size Wang, Xin Yu, Xin Ji, Yiting Chen, Kui Zhang, Rongye Shi, Wenjun Wu</p>
+              <p class="paper-links"><strong>IEEE/RSJ IROS 2024</strong> · Embodied · ADMIRE group publication<a href="https://arxiv.org/abs/2407.08164">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="llm-nar" data-topic="agents" data-group-publication data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/llm-nar.webp" alt="LLM-NAR framework combining a language model and a graph neural reasoner for multi-agent path finding" width="1000" height="385" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/IJCNN64981.2025.11227551">Neural Algorithmic Reasoners informed Large Language Model for Multi-Agent Path Finding</a></h3>
+              <p class="authors">Pu Feng, Size Wang, Yuhong Cao, Junkang Liang, Rongye Shi, Wenjun Wu</p>
+              <p class="paper-links"><strong>IEEE IJCNN 2025</strong> · Embodied · ADMIRE group publication<a href="https://arxiv.org/abs/2508.17971">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="aeroweaver" data-topic="agents" data-group-publication data-venue-priority="preprint" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/aeroweaver.webp" alt="AeroWeaver overview showing aerial skills, distributed swarm orchestration, and experience-guided adaptation" width="1087" height="635" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2609.18520">AeroWeaver: An Embodied-Agent Harness for Weaving Aerial Skills into Distributed, Adaptive Swarm Execution</a></h3>
+              <p class="authors">Jiabin Lou, Yirong Yang, Haopeng Wang, Xuxin Lv, Xinyu Liu, Diyuan Hou, Xuehong Liu, Rongye Shi, Wenjun Wu</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="robofoundry" data-topic="agents" data-group-publication data-venue-priority="preprint" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/robofoundry.webp" alt="RoboFoundry framework for task-level policy execution and evidence-guided system updates" width="909" height="562" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2609.32862">RoboFoundry: System-as-Policy Evolution for Self-Learning Embodied Agents</a></h3>
+              <p class="authors">Jingsong Liang, Shuhao Liao, Shizhe Zhang, Diyuan Hou, Yuxin Cai, Xinjian Deng, Chengyang He, Wenhui Huang, Runjia Tan, Zhidong Wang, Lan Yu, Xuesong Tian, Guillaume Sartoretti, Jie Luo, Yao Mu, Wenjun Wu, Wanhua Li, Chen Lv</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="voln" data-topic="agents" data-group-publication data-venue-priority="preprint" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/voln.webp" alt="VoLN comparison of instruction-guided navigation and navigation from visual cues" width="1000" height="614" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2607.21400">VoLN: Vision-Only Long-Horizon Navigation—Paradigm, Benchmark, and Method</a></h3>
+              <p class="authors">Jiabin Lou, Haopeng Wang, Yuanshuai Wang, Xinyu Liu, Xuxin Lv, Yuxin Guo, Lei Huang, Rongye Shi, Wenjun Wu</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · Embodied · ADMIRE group publication<a href="https://admire-ljb.github.io/VoLN-UAV/">Project page</a></p>
+            </article>
+          </li>
+          <li class="paper" id="aeris" data-topic="agents" data-group-publication data-venue-priority="preprint" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/aeris.webp" alt="AERIS architecture connecting onboard perception, language models, and aerial robot coordination" width="1000" height="574" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2606.30151">AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm</a></h3>
+              <p class="authors">Jiabin Lou, Haopeng Wang, Xinyu Liu, Yu Zhang, Rongye Shi, Wenjun Wu</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="fare" data-topic="agents" data-group-publication data-venue-priority="preprint" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/fare.webp" alt="FARE framework with slow global reasoning and fast local execution" width="1083" height="581" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2601.14681">FARE: Fast-Slow Agentic Robotic Exploration</a></h3>
+              <p class="authors">Shuhao Liao, Xuxin Lv, Jeric Lew, Shizhe Zhang, Jingsong Liang, Peizhuo Li, Yuhong Cao, Wenjun Wu, Guillaume Sartoretti</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · Embodied · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="trojanworld" data-topic="agents" data-venue-priority="preprint" data-subtopic="embodied" hidden>
+            <div class="paper-image"><img src="images/trojanworld.png" alt="TrojanWorld overview comparing clean and trigger-present environments" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2609.07051">TrojanWorld: Backdooring World-Model Agents via Imagination Steering</a></h3>
+              <p class="authors">Wenkai Huang, Siyuan Liang, Gaolei Li, Yiming Li, <strong>Tianhao Peng</strong>, Jianhua Li, Dacheng Tao</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · Embodied</p>
+            </article>
+          </li>
+          <li class="paper" id="workflow-scheduling" data-topic="agents" data-group-publication data-venue-priority="a" data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/workflow-scheduling.webp" alt="WS-CCR workflow scheduling architecture for policy generation and workflow execution" width="892" height="555" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/TSC.2023.3253182">Integrating Cognition Cost With Reliability QoS for Dynamic Workflow Scheduling Using Reinforcement Learning</a></h3>
+              <p class="authors">Xiaoming Yu, Wenjun Wu, Yangzhou Wang</p>
+              <p class="paper-links"><strong>IEEE TSC 2023</strong> · Digital · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="mm-browsecomp" data-topic="agents" data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/mm-browsecomp.png" alt="Two examples of multimodal browsing tasks in MM-BrowseComp" loading="lazy"></div>
+            <article>
+              <h3><a href="https://aclanthology.org/2026.emnlp-main.1169/">MM-BrowseComp: A Comprehensive Benchmark for Multimodal Browsing Agents</a></h3>
+              <p class="authors">Shilong Li, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>EMNLP 2026</strong> · Digital<a href="https://arxiv.org/abs/2508.13186">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="skill-guided-continuation" data-topic="agents" data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/skill-guided-continuation.png" alt="Skill-Guided Continuation Distillation framework" loading="lazy"></div>
+            <article>
+              <h3><a href="https://aclanthology.org/2026.findings-emnlp.1566/">Skill-Guided Continuation Distillation for GUI Agents</a></h3>
+              <p class="authors">Zhimin Fan, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>Findings of EMNLP 2026</strong> · Digital<a href="https://arxiv.org/abs/2606.18890">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="topoevo" data-topic="agents" data-group-publication data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/topoevo.webp" alt="TopoEvo framework for topology-aware diagnosis and incident memory" width="1100" height="566" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/icws72778.2026.00056">TopoEvo: A Topology-Aware Self-Evolving Multi-Agent Framework for Root Cause Analysis in Microservices</a></h3>
+              <p class="authors">Junle Wang, Ruibo Chen, Yuanshuai Wang, Xingchuang Liao, Zhimin Fan, Xiangdong Wu, Wenjun Wu, Xuehong Liu, Jinkun Zhao</p>
+              <p class="paper-links"><strong>IEEE ICWS 2026</strong> · Digital · ADMIRE group publication<a href="https://arxiv.org/abs/2605.15611">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="star-icws" data-topic="agents" data-group-publication data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/star-icws.webp" alt="STAR framework for diagnosing and repairing stages in a microservice analysis agent" width="665" height="395" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/icws72778.2026.00057">STAR: A Stage-Attributed Triage and Repair Framework for RCA Agents in Microservices</a></h3>
+              <p class="authors">Junle Wang, Ruibo Chen, Yuanshuai Wang, Xingchuang Liao, Zhimin Fan, Xiangdong Wu, Wenjun Wu, Jinkun Zhao, Xuehong Liu</p>
+              <p class="paper-links"><strong>IEEE ICWS 2026</strong> · Digital · ADMIRE group publication<a href="https://arxiv.org/abs/2605.15581">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="learning-what-to-keep" data-topic="agents" data-venue-priority="preprint" data-subtopic="digital" data-corresponding-author>
+            <div class="paper-image"><img src="images/learning-what-to-keep.png" alt="SkillGrain training and inference framework for learning from user feedback" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2610.19380">Learning What to Keep: Transfer-Aware Personal Skill Learning from User Feedback</a></h3>
+              <p class="authors">Li Wang, Chen Zhang, Yirong Yang, Xingyu Chen, Jinkun Zhao, <strong>Tianhao Peng</strong> <span class="corresponding-author">(corresponding author)</span>, Wenjun Wu</p>
+              <p class="paper-links"><strong>arXiv 2026</strong> · Digital</p>
+            </article>
+          </li>
+          <li class="paper" id="oagents" data-topic="agents" data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/oagents.png" alt="OAgents framework with planning, memory, tools, and test-time scaling" loading="lazy"></div>
+            <article>
+              <h3><a href="https://aclanthology.org/2025.findings-emnlp.720/">OAgents: An Empirical Study of Building Effective Agents</a></h3>
+              <p class="authors">He Zhu, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>Findings of EMNLP 2025</strong> · Digital<a href="https://arxiv.org/abs/2506.15741">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="code-intelligence" data-topic="agents" data-venue-priority="preprint" data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/code-intelligence.png" alt="Timeline of code intelligence from manual programming to coding agents" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2511.18538">From Code Foundation Models to Agents and Applications: A Comprehensive Survey and Practical Guide to Code Intelligence</a></h3>
+              <p class="authors">Jian Yang, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>arXiv 2025</strong> · Digital</p>
+            </article>
+          </li>
+          <li class="paper" id="coe-ops" data-topic="agents" data-group-publication data-venue-priority="preprint" data-subtopic="digital" hidden>
+            <div class="paper-image"><img src="images/coe-ops.webp" alt="CoE-Ops framework for retrieval-augmented task classification and expert routing" width="1100" height="705" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2507.22937">CoE-Ops: Collaboration of LLM-based Experts for AIOps Question-Answering</a></h3>
+              <p class="authors">Jinkun Zhao, Yuanshuai Wang, Xingjian Zhang, Ruibo Chen, Xingchuang Liao, Junle Wang, Lei Huang, Kui Zhang, Wenjun Wu</p>
+              <p class="paper-links"><strong>arXiv 2025</strong> · Digital · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="agent-kb" data-topic="agents" data-lead-author data-venue-priority="preprint" data-subtopic="digital">
+            <div class="paper-image"><img src="images/agent-kb.png" alt="" loading="lazy"></div>
+            <article>
+              <h3><a href="https://arxiv.org/abs/2507.06229">Agent KB: Leveraging Cross-Domain Experience for Agentic Problem Solving</a></h3>
+              <p class="authors">Xiangru Tang*, Tianrui Qin*, <strong>Tianhao Peng</strong>*, et al.</p>
+              <p class="paper-topic">2025 · Multi-Agent Systems</p>
+              <p class="paper-links"><strong>arXiv preprint</strong> · Digital<a href="https://github.com/OPPO-PersonalAI/Agent-KB">Code</a></p>
+            </article>
+          </li>
+          <li class="paper" id="clmer" data-topic="education" hidden>
+            <div class="paper-image"><img src="images/clmer.webp" alt="CLMER framework for contrastive learning and cross-modal emotion recognition" width="960" height="443" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/TNNLS.2026.3732747">CLMER: A Framework for Contrastive Learning-Based Multimodal Emotion Recognition</a></h3>
+              <p class="authors">Shuang Niu, Jian He, Yu Liang, Xiyuan Hu, Shahid Mumtaz, Kaixin Wang, <strong>Tianhao Peng</strong>, Chenlong Zhang, Zaitian Wang</p>
+              <p class="paper-links"><strong>IEEE TNNLS 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="cldae" data-topic="education" hidden>
+            <div class="paper-image"><img src="images/cldae.webp" alt="CLDAE framework for contrastive pre-training and EEG emotion recognition" width="960" height="607" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/JBHI.2026.3668381">CLDAE: A Two Stage EEG-Based Emotion Recognition Framework Combining Contrastive Learning and Dual-Attention Encoder</a></h3>
+              <p class="authors">Rongqi Cao, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>IEEE JBHI 2026</strong></p>
+            </article>
+          </li>
+          <li class="paper" id="peer-grading" data-topic="education" data-group-publication hidden>
+            <div class="paper-image"><img src="images/peer-grading.webp" alt="Human–machine peer-grading framework with an autograder and reviewer incentives" width="520" height="306" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/tlt.2022.3216946">Peer Grading Eliciting Truthfulness Based on Autograder</a></h3>
+              <p class="authors">Yong Han, Wenjun Wu, Yu Liang, Lijun Zhang</p>
+              <p class="paper-links"><strong>IEEE TLT 2023</strong> · ADMIRE group publication</p>
+            </article>
+          </li>
+          <li class="paper" id="milmer" data-topic="education" hidden>
+            <div class="paper-image"><img src="images/milmer.webp" alt="Milmer architecture for EEG and facial feature fusion" width="774" height="776" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1016/j.neucom.2026.134368">Milmer: a framework for multiple instance learning based multimodal emotion recognition</a></h3>
+              <p class="authors">Zaitian Wang, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>Neurocomputing 2026</strong><a href="https://arxiv.org/abs/2502.00547">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="spatial-temporal-eeg" data-topic="education" hidden>
+            <div class="paper-image"><img src="images/spatial-temporal-eeg.webp" alt="Spatial-temporal transformer and curriculum learning for EEG emotion recognition" width="803" height="457" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1109/SMC58881.2025.11343476">Spatial-Temporal Transformer with Curriculum Learning for EEG-Based Emotion Recognition</a></h3>
+              <p class="authors">Xuetao Lin, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>IEEE SMC 2025</strong><a href="https://arxiv.org/abs/2507.14698">arXiv</a></p>
+            </article>
+          </li>
+          <li class="paper" id="fetcheeg" data-topic="education" hidden>
+            <div class="paper-image"><img src="images/fetcheeg.webp" alt="FetchEEG framework for feature extraction and temporal-channel attention" width="960" height="315" loading="lazy"></div>
+            <article>
+              <h3><a href="https://doi.org/10.1088/1741-2552/ad4743">FetchEEG: a hybrid approach combining feature extraction and temporal-channel joint attention for EEG-based emotion classification</a></h3>
+              <p class="authors">Yu Liang, …, <strong>Tianhao Peng</strong>, et al.</p>
+              <p class="paper-links"><strong>Journal of Neural Engineering 2024</strong></p>
+            </article>
+          </li>
+        </ul>
+        <p class="contribution-note">* Equal contribution.</p>
+      </section>
+
+      <section class="section collaboration" id="collaborations" aria-labelledby="collaborations-title" hidden>
+        <h2 id="collaborations-title">Research Collaborations</h2>
+        <div class="collaboration-map">
+          <canvas width="880" height="440" role="img" aria-label="World map of research collaboration locations"></canvas>
+          <div class="collaboration-tooltip" id="collaboration-map-tooltip" role="tooltip" hidden></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="inset footer">
+      <span>Tianhao Peng</span>
+      <a href="#top">Back to top</a>
+    </footer>
+  </div>
+</body>
+</html>
