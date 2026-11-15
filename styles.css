@@ -288,6 +288,34 @@ main section, .paper { scroll-margin-top: 28px; }
 .paper-links a:hover { text-decoration: underline; }
 .contribution-note { padding-top: 8px; border-top: 1px solid var(--rule); }
 
+.conference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+.conference h3 { color: var(--heading); }
+.conference-meta { margin: 2px 0 9px; color: var(--muted); font-size: 14px; }
+.conference-photo, .conference-thumbnails a { display: block; }
+.conference-photo img, .conference-thumbnails img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.conference-summary { margin-top: 8px; color: var(--body); font-size: 15px; }
+.conference-photos { margin-top: 6px; font-size: 14px; }
+.conference-photos summary { width: fit-content; color: var(--link); cursor: pointer; }
+.conference-photos summary:hover { text-decoration: underline; }
+.conference-photos summary:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+.conference-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+.conference-thumbnails img { aspect-ratio: 4 / 3; object-fit: cover; }
+
 .collaboration-map { position: relative; max-width: 420px; margin: 0 auto; }
 .collaboration-map canvas { display: block; width: 100%; height: auto; }
 .collaboration-map canvas.is-over-marker { cursor: pointer; }
@@ -329,6 +357,7 @@ main section, .paper { scroll-margin-top: 28px; }
 }
 
 @media (max-width: 620px) {
+  .conference-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .collaboration-map { max-width: 320px; }
   .research-direction { display: block; padding: 14px; }
   .research-direction-copy, .research-direction-figure { width: 100%; padding: 0; }
@@ -349,7 +378,8 @@ main section, .paper { scroll-margin-top: 28px; }
   .profile-links { margin-top: 7px; font-size: 13px; }
   .profile-links li:not(:last-child) { margin-right: 9px; }
   .profile-links li + li::before { content: none; }
-  .site-nav li + li::before { margin: 0 8px; }
+  .site-nav ul { display: flex; flex-wrap: wrap; gap: 4px 11px; }
+  .site-nav li + li::before { content: none; }
   main { padding-top: 28px; }
   .section { margin-top: 34px; }
   .paper { align-items: flex-start; padding: 16px 0; }
